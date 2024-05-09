@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    border-radius: 10px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #1b599e;
+    border-radius: 10px;
+  }
+  .hide_scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #1b599e;
+    border-radius: 10px;
+  }
+  .submenu {
+    position: relative;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .submenu2 {
+      position: absolute;
+      left: 100%;
+      top: -10px;
+      background-color: white;
+      display: none;
+    }
+    .submenu:hover > .submenu2 {
+      display: block;
+    }
+
+    .submenu2 a span {
+      padding: 4px 0;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin: 10mm;
+      background-color: #ffffff !important;
+    }
+    body * {
+      visibility: hidden;
+      background-color: #ffffff !important;
+    }
+    .section-to-print,
+    .section-to-print * {
+      visibility: visible;
+      background-color: #ffffff !important;
+    }
+    .section-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #ffffff !important;
+    }
+  }
+
+  /* for remove up & down arrow in number input */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    /* -moz-appearance: none; */
+    appearance: none;
+    margin: 0;
+    display: none;
+  }
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  @font-face {
+    font-family: "SF Pro Text";
+    src: url("./assets/fonts/SFProText-Regular.ttf");
+    src: url("./assets/fonts/SFProText-Medium.ttf");
+    src: url("./assets/fonts/SFProText-Semibold.ttf");
+    src: url("./assets/fonts/SFProText-Bold.ttf");
+  }
+  position: relative;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.ReactModal__Overlay {
+  z-index: 99999 !important;
+  overflow: hidden !important;
+}
+.ReactModal__Overlay--after-open {
+  z-index: 99999 !important;
+  overflow: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: #1b599e;
+  border-radius: 10px;
+}
+.open {
+  background-color: #f5f5f5 !important;
+}
+
+.line_camp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: 1280px) {
+  .space_for_div {
+    padding: 0 4.5rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .space_for_div {
+    padding: 0 2.5rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .space_for_div {
+    padding: 0 0.75rem;
+  }
+}
+
+.active {
+  background-color: #1b599e;
+  color: white;
+  font-weight: 600;
+}
+.react_magnify {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  z-index: 99999 !important;
+}
+
+.react_magnify > img {
+  height: 100% !important;
+  width: 100% !important;
+}
+.enlarge_image {
+  position: absolute;
+  z-index: 999999 !important;
+  top: 16rem !important;
+  left: 0rem !important;
+  background-color: lightgray !important;
+  padding: 1rem 0;
+}
+/* .enlarge_image > * {
+  position: absolute;
+  z-index: 99999 !important;
+  top: 0;
+  left: 100% !important;
+  background-color: gray !important;
+  padding: 1rem;
+} */
+
+.react-tel-input .country-list {
+  top: -100px;
+}
